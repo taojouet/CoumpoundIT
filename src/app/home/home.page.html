@@ -8,68 +8,96 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-grid>
-    <ion-row size-sm="6" offset-sm="3">
-      <ion-col>
-        <ion-item lines="none">
-          <h1>{{ result }} $</h1>
-        </ion-item>
-      </ion-col>
-    </ion-row>
-    <ion-row size-sm="6" offset-sm="3">
-      <ion-col>
-        <ion-item>
-          <ion-label position="floating">Estimated interest rate (in %)</ion-label>
-          <ion-input 
-          required
-          type="number" 
-          [(ngModel)]="interestPercent"
-          expand="block"
-          max="100" 
-          min="1" id="rate"></ion-input>
-        </ion-item>
-      </ion-col>
-    </ion-row>
-    <ion-row size-sm="6" offset-sm="3">
-      <ion-col>
-        <ion-item>
-          <ion-label position="floating">Starting amount</ion-label>
-          <ion-input 
-          required
-          type="number" 
-          [(ngModel)]="startingAmount"
-          expand="block" 
-          min="0" id="startingAmount"></ion-input>
-        </ion-item>
-      </ion-col>
-    </ion-row>
-    <ion-row size-sm="6" offset-sm="3">
-      <ion-col>
-        <ion-item>
-          <ion-label position="floating">Monthly investment</ion-label>
-          <ion-input 
-          required
-          type="number" 
-          [(ngModel)]="monthlyInvestment"
-          expand="block"
-          min="0" id="monthlyInvestment"></ion-input>
-        </ion-item>
-      </ion-col>
-    </ion-row>
-    <ion-row size-sm="6" offset-sm="3">
-      <ion-col>
-        <ion-item>
-          <ion-label position="floating">How many years</ion-label>
-          <ion-input 
-          required
-          type="number" 
-          [(ngModel)]="years"
-          expand="block"
-          min="1" id="years"></ion-input>
-        </ion-item>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-    <ion-button expand="block" color="medium" (click)="onCalculate()">Calculate!</ion-button>
-    <ion-button expand="block" fill="outline" color="medium" (click)="onClear()">Clear</ion-button>
+    <ion-grid>
+      <ion-row size-sm="6" offset-sm="3">
+        <ion-col>
+          <ion-item lines="none">
+            <h1>{{ result }} $</h1>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row size-sm="6" offset-sm="3">
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating">Estimated interest rate (in %)</ion-label>
+            <ion-input 
+            required
+            type="number" 
+            [(ngModel)]="interestPercent"
+            expand="block"
+            max="100" 
+            min="1" id="rate"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row size-sm="6" offset-sm="3">
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating">Starting amount</ion-label>
+            <ion-input 
+            required
+            type="number" 
+            [(ngModel)]="startingAmount"
+            expand="block" 
+            min="0" id="startingAmount"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row size-sm="6" offset-sm="3">
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating">Monthly investment</ion-label>
+            <ion-input 
+            required
+            type="number" 
+            [(ngModel)]="monthlyInvestment"
+            expand="block"
+            min="0" id="monthlyInvestment"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row size-sm="6" offset-sm="3">
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating">How many years</ion-label>
+            <ion-input 
+            required="true"
+            type="number" 
+            [(ngModel)]="years"
+            expand="block"
+            min="1" id="years"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+      <ion-button 
+      expand="block" 
+      color="medium" 
+      (click)="onCalculate()">Calculate!</ion-button>
+     <ion-grid>
+      <ion-row>
+        <ion-col size-sm="6" offset-sm="3">
+          <ion-button expand="block" fill="outline" color="medium" (click)="onClear()">Clear</ion-button>
+        </ion-col>
+        <ion-col size-sm="6">
+          <ion-button expand="block" fill="outline" color="medium" (click)="onSave()">Save</ion-button>
+        </ion-col>
+      </ion-row>
+     </ion-grid>
+
+    <ion-fab vertical="bottom" horizontal="start" slot="fixed">
+      <ion-fab-button  color="dark">
+        <ion-icon name="arrow-dropright"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-list side="end">
+        <ion-fab-button (click)="onNavToSaved()">
+          <ion-icon name="bookmark"></ion-icon>
+        </ion-fab-button>
+        <ion-fab-button>
+          <ion-icon name="home"></ion-icon>
+        </ion-fab-button>
+      </ion-fab-list>
+    </ion-fab>
+
 </ion-content>

@@ -4,6 +4,8 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)},
+  // tslint:disable-next-line: max-line-length
+  { path: 'previous-calculs', loadChildren: () => import('./previous-calculs/previous-calculs.module').then(m => m.PreviousCalculsPageModule)},
 ];
 
 @NgModule({
