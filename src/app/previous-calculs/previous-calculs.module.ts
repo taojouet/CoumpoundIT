@@ -6,6 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { PreviousCalculsPage } from './previous-calculs.page';
+import { SavedCalculsService } from '../home/saved-calculs.service';
 
 const routes: Routes = [
   {

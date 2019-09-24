@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar color="dark">
-    <ion-title>
+    <ion-title text-center>
       Coumpound Interest <br> 
       Calculator
     </ion-title>
@@ -11,7 +11,7 @@
     <ion-grid>
       <ion-row size-sm="6" offset-sm="3">
         <ion-col>
-          <ion-item lines="none">
+          <ion-item lines="none" type="number">
             <h1>{{ result }} $</h1>
           </ion-item>
         </ion-col>
@@ -81,7 +81,7 @@
           <ion-button expand="block" fill="outline" color="medium" (click)="onClear()">Clear</ion-button>
         </ion-col>
         <ion-col size-sm="6">
-          <ion-button expand="block" fill="outline" color="medium" (click)="onSave()">Save</ion-button>
+          <ion-button expand="block" fill="outline" color="medium" (click)="onSave()">Save & Clear</ion-button>
         </ion-col>
       </ion-row>
      </ion-grid>
